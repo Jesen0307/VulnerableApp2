@@ -190,3 +190,16 @@ tasks.named("jacocoTestReport") {
         xml.outputLocation.set(layout.buildDirectory.file("reports/jacoco.xml"))
     }
 }
+
+task printRuntimeClasspath {
+    doLast {
+        def buildDir = file("build")
+        if (!buildDir.exists()) {
+            buildDir.mkdirs()
+        }
+        def classpathFile = file("build/runtimeClasspath.txt")
+        def classpath = sourceSets.main.runtimeClasspath.asPath
+        classpathFile.text = classpath
+        println "Runtime classpath saved to: ${classpathFile.absolutePath}"
+    }
+}
