@@ -1,4 +1,4 @@
-@Library('mpl') _
+@Library('mpl@master') _
 
 MPLPipeline {
     modules = [
