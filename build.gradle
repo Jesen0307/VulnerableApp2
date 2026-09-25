@@ -203,3 +203,5 @@ task printRuntimeClasspath {
         println "Runtime classpath saved to: ${classpathFile.absolutePath}"
     }
 }
+dependencyLocking {
+    lockAllConfigurations()
